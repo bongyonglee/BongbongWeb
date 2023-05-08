@@ -1,0 +1,41 @@
+﻿@model ReservationStatus
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div>
+            <h2 class="text-dark">예약 수정</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0">이름</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0" asp-for="PhoneNumber">전화번호</label>
+            <input asp-for="PhoneNumber" class="form-control">
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="ReservationTime" class="p-0">예약 시간</label>
+            <input asp-for="ReservationTime" class="form-control">
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-dark form-control">수정하기</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="ReservationStatus" asp-action="Index" class="btn btn-ouline-secondary border form-control">
+                    이전 화면으로
+                </a>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section scripts
+    {
+    @{
+        <Partial name="_ValidationScriptsPartial" />
+    }
+}
